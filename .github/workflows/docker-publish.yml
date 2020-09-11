@@ -50,7 +50,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into GitHub Container Registry
-        run: echo ${{ github.token }} | docker login https://ghcr.io -u ${{ github.repository_owner }} --password-stdin
+        run: echo ${{ github.token }} | docker login https://docker.pkg.github.com/ -u ${{ github.repository_owner }} --password-stdin
 
       - name: Push image to GitHub Container Registry
         run: |
